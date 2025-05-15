@@ -1,0 +1,34 @@
+.con {
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  .errorStatus {
+    font-size: 100px;
+  }
+  .desc {
+    width: 60%;
+    text-align: center;
+    height: auto;
+    @media (max-width: 560px) {
+      width: 90%;
+    }
+  }
+  .btn {
+    width: 200px;
+    height: 40px;
+    background-color: var(--color-dark);
+    border-radius: 20px;
+    color: var(--color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,71 @@
+@import 'src/styles/mixins.scss';
+.main_con {
+  width: 94%;
+  max-width: 1400px;
+  @include flexbox(center, flex-start);
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.loading {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fullscreenBtn {
+  width: 70px;
+  height: 35px;
+  padding: 0 5px;
+  position: relative;
+  @include devices(lg) {
+    width: 60px;
+    height: 30px;
+  }
+  @media (max-width: 600px) {
+    width: 50px;
+    height: 25px;
+  }
+  @media (max-width: 400px) {
+    width: 40px;
+    height: 20px;
+  }
+
+  .fullscreenIcon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-light);
+    transition: all 0.3s ease;
+    &.active {
+      transform: translateX(+35px);
+      background-color: rgb(74, 222, 129);
+      @include devices(lg) {
+        transform: translateX(+30px);
+      }
+      @media (max-width: 600px) {
+        transform: translateX(+25px);
+      }
+      @media (max-width: 400px) {
+        transform: translateX(+17px);
+      }
+    }
+    @include devices(lg) {
+      width: 20px;
+      height: 20px;
+    }
+    @media (max-width: 600px) {
+      width: 15px;
+      height: 15px;
+    }
+    @media (max-width: 400px) {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}

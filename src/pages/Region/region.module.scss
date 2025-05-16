@@ -3,6 +3,23 @@
   max-width: 1400px;
   @include flexbox(center, flex-start);
   gap: 10px;
+  position: relative;
+  .menu {
+    display: none;
+    @include devices(md) {
+      display: block;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 150;
+      background: var(--color-blue);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
 }
 
 .sidebar {
@@ -14,19 +31,45 @@
   @include flexbox(flex-start, flex-start);
   flex-direction: column;
   gap: 5px;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  z-index: 100;
+  @include devices(md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 250px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
   h2 {
     width: 100%;
     @include flexbox(flex-start, center);
     height: 60px;
     border-bottom: 1px solid var(--color-light-grey);
-
-    padding-left: 20px;
+    padding: 0 10px 0 20px;
+    @include devices(lg) {
+      height: 50px;
+      font-size: 20px;
+      @include flexbox(space-between, center);
+    }
   }
   a {
     width: 100%;
-    height: 40px;
+    height: auto;
     @include flexbox(flex-start, center);
-    padding-left: 20px;
+    padding: 10px 10px 10px 20px;
+    line-height: 1.2; // Уменьшает расстояние между строками
+    &.active {
+      background-color: var(--color-blue-03); // светло-синий фон для активной вкладки
+      color: var(--color-blue);
+      font-weight: bold;
+    }
     /* background-color: aqua; */
   }
 }
@@ -35,11 +78,19 @@
   width: 80%;
   @include flexbox(flex-start, flex-start);
   flex-direction: column;
-  padding: 0 0 40px 20px;
+  padding: 0 20px 40px 20px;
+  @include devices(md) {
+    padding: 0 10px 30px 10px;
+    width: 100%;
+  }
   h2 {
     height: 60px;
     @include centered;
     margin-bottom: 10px;
+    @include devices(lg) {
+      height: 50px;
+      font-size: 20px;
+    }
   }
   img {
     width: 100%;
@@ -47,5 +98,6 @@
   h3 {
     width: 100%;
     text-align: center;
+    margin: 20px 0;
   }
 }

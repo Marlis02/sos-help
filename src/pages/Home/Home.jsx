@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import main_img from '/home-banner.jpg'
 import home_title from '/home_title.svg'
-import react from '/react.svg'
+// import react from '/react.png'
 import check from '/check.png'
 
 import styles from './home.module.scss'
 
 const Home = () => {
+  const beforeRef = useRef(null)
+  const duringRef = useRef(null)
+  const afterRef = useRef(null)
+  const scrollToRef = (ref) => {
+    if (ref.current) {
+      const offset = 80
+      const top = ref.current.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
+
   return (
     <main className={styles.con}>
       <img className={styles.banner} src={main_img} alt="main_img" />
@@ -14,9 +25,9 @@ const Home = () => {
         <div className={styles.title_con}>
           <h1 className={styles.title}>Оползни и селевые потоки</h1>
           <div className={styles.links}>
-            <button>До оползня</button>
-            <button>Во время оползня</button>
-            <button>После оползня</button>
+            <button onClick={() => scrollToRef(beforeRef)}>До оползня</button>
+            <button onClick={() => scrollToRef(duringRef)}>Во время оползня</button>
+            <button onClick={() => scrollToRef(afterRef)}>После оползня</button>
           </div>
         </div>
         <div className={styles.content}>
@@ -51,14 +62,13 @@ const Home = () => {
             особенно если не учитывать риски при строительстве и планировании.
           </p>
           {/* 1 */}
-          <div className={styles.block1}>
+          <div className={styles.block1} ref={beforeRef}>
             <h2 className={styles.block1_title}> До оползня</h2>
             <p className={styles.block1_text}>
               Чтобы защитить себя, свою семью и имущество от последствий оползня или селевого потока
               в Кыргызстане, следует предпринять следующие шаги:
             </p>
             <div className={styles.block1_content1}>
-              <img className={styles.block1_img} src={react} alt="bag" />
               <p>
                 <img src={check} alt="check" width={30} height={30} />
                 Соберите набор первой необходимости. Включите туда аптечку, фонарик, батарейки,
@@ -144,7 +154,7 @@ const Home = () => {
               </ul>
             </div>
           </div>
-          <div className={styles.block1}>
+          <div className={styles.block1} ref={duringRef}>
             <h2 className={styles.block1_title}>Во время оползня</h2>
             <br />
             <div className={styles.block1_content1}>
@@ -191,7 +201,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className={styles.block1}>
+          <div className={styles.block1} ref={afterRef}>
             <h2 className={styles.block1_title}>После оползня</h2>
             <br />
             <div className={styles.block1_content1}>

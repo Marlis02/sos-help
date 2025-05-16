@@ -1,0 +1,45 @@
+.con {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block {
+  width: 1400px;
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.section {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ccc;
+  border-radius: 6px;
+}
+
+.list {
+  margin-top: 10px;
+  padding-left: 20px;
+  line-height: 1.6;
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: #0055cc;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

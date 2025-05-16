@@ -1,10 +1,12 @@
 // components/Navbar.jsx
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import styles from './nav.module.scss'
 import { useEffect, useState } from 'react'
+import logo from '/logo.webp'
 
 const Nav = () => {
   const [isSticky, setIsSticky] = useState(false)
+  const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 20)
@@ -15,19 +17,24 @@ const Nav = () => {
   return (
     <nav className={`${styles.con} ${isSticky ? styles.sticky : ''}`}>
       <div className={styles.block}>
-        <img
-          className={styles.logo_img}
-          src="https://www.adobe.com/uk/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
-          alt="logo"
-        />
+        <img className={styles.logo_img} src={logo} alt="logo" onClick={() => navigate('/')} />
         <div className={styles.links_con}>
-          <NavLink className={styles.link} to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+          >
             Главная
           </NavLink>
-          <NavLink className={styles.link} to="/regions">
+          <NavLink
+            to="/regions"
+            className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+          >
             Регионы
           </NavLink>
-          <NavLink className={styles.link} to="/contacts">
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+          >
             Контакты
           </NavLink>
         </div>

@@ -6,7 +6,7 @@
   position: sticky;
   border-bottom: 1px solid var(--color-light-grey);
   top: 0;
-  z-index: 2;
+  z-index: 1000;
   backdrop-filter: blur(40px);
   @include centered;
   &.sticky {
@@ -19,14 +19,18 @@
 
     @include flexbox(space-between, center);
     .logo_img {
-      width: 60px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
     }
     .links_con {
       width: 30%;
       @include flexbox(flex-end, center);
       gap: 20px;
       .link {
+        &.active {
+          border-bottom: 2px solid var(--color-blue);
+          color: var(--color-blue);
+        }
         &:hover {
           border-bottom: 2px solid var(--color-blue);
           color: var(--color-blue);

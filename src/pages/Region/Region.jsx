@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './region.module.scss'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { ChevronLeft } from 'lucide'
 
 const Regions = () => {
   const location = useLocation()

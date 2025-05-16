@@ -2,7 +2,7 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import styles from './nav.module.scss'
 import { useEffect, useState } from 'react'
-import logo from '/logo.webp'
+import logo from '/logo.png'
 
 const Nav = () => {
   const [isSticky, setIsSticky] = useState(false)

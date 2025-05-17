@@ -17,7 +17,7 @@ const Routing = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/regions" element={<Regions />}>
-        <Route index element={<Navigate to="chuy" replace />} />
+        <Route index element={<Navigate to="osh" replace />} />
         <Route path="chuy" element={<Chuy />} />
         <Route path="osh" element={<Osh />} />
         <Route path="naryn" element={<Naryn />} />

@@ -7,9 +7,17 @@
   background-color: #f0f0f0;
 }
 .footer_left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   a {
     color: #333;
     padding-right: 5px;
+    @media (max-width: 530px) {
+      font-size: 14px;
+      white-space: nowrap;
+    }
   }
 }
 .sos_icons {
@@ -55,7 +63,7 @@
   }
 
   .copy {
-    font-size: 13px;
+    font-size: 16px;
     color: #777;
   }
 }

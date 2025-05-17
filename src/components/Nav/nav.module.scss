@@ -23,9 +23,25 @@
       height: 40px;
     }
     .links_con {
-      width: 30%;
+      width: 70%;
       @include flexbox(flex-end, center);
       gap: 20px;
+      @include devices(sm) {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        padding: 10px;
+        border: 1px solid var(--color-light-grey);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        &.open {
+          display: flex;
+        }
+      }
       .link {
         &.active {
           border-bottom: 2px solid var(--color-blue);
@@ -35,7 +51,43 @@
           border-bottom: 2px solid var(--color-blue);
           color: var(--color-blue);
         }
+        @include devices(sm) {
+          padding: 10px;
+          width: 100%;
+        }
       }
     }
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+
+  div {
+    height: 4px;
+    background-color: black;
+    transition: transform 0.3s ease;
+  }
+  &.open {
+    div:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    div:nth-child(2) {
+      opacity: 0;
+    }
+
+    div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+  @include devices(sm) {
+    display: flex;
   }
 }

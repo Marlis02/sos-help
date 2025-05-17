@@ -21,6 +21,9 @@
     @include flexbox(flex-start, flex-start);
     flex-direction: column;
     gap: 10px;
+    h1 {
+      line-height: 1;
+    }
     .links {
       margin-bottom: 20px;
       @include flexbox(flex-start, center);
@@ -36,13 +39,11 @@
   .rules {
     @include flexbox(space-between, center);
     gap: 20px;
-    .rules_img {
-      width: 80px;
-      height: 80px;
-    }
   }
 }
-
+.rules_title {
+  font-weight: bold;
+}
 .block1 {
   .block1_text {
     margin-bottom: 20px;
@@ -58,21 +59,32 @@
       gap: 15;
       padding: 15px;
     }
-    // .block1_img {
-    //   align-self: center;
-    //   width: 40%;
-    // }
-    p {
-      img {
-        margin-top: 5px;
-      }
-      @include flexbox(flex-start, flex-start);
-      gap: 15px;
+    .block1_img {
+      align-self: center;
+      width: 40%;
     }
   }
   .block1_content2 {
     ul {
       padding: 10px 30px;
+    }
+  }
+}
+
+.block2 {
+  .block2_text {
+    margin-bottom: 20px;
+  }
+  .block2_con {
+    border-radius: 10px;
+    padding: 30px;
+    background-color: var(--color-blue-03);
+    @include flexbox(flex-start, flex-start);
+    flex-direction: column;
+    gap: 10px;
+    .block1_img {
+      align-self: center;
+      width: 40%;
     }
   }
 }

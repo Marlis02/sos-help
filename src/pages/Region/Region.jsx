@@ -28,17 +28,24 @@ const Regions = () => {
         <h2>Регионы</h2>
         <NavLink
           onClick={() => setSidebarOpen(false)}
-          to="chuy"
-          className={({ isActive }) => (isActive ? styles.active : '')}
-        >
-          Чуйская область
-        </NavLink>
-        <NavLink
-          onClick={() => setSidebarOpen(false)}
           to="osh"
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
           Ошская область
+        </NavLink>
+        <NavLink
+          onClick={() => setSidebarOpen(false)}
+          to="jalalabad"
+          className={({ isActive }) => (isActive ? styles.active : '')}
+        >
+          Джалал-Абадская область
+        </NavLink>
+        <NavLink
+          onClick={() => setSidebarOpen(false)}
+          to="batken"
+          className={({ isActive }) => (isActive ? styles.active : '')}
+        >
+          Баткенская область
         </NavLink>
         <NavLink
           onClick={() => setSidebarOpen(false)}
@@ -56,10 +63,10 @@ const Regions = () => {
         </NavLink>
         <NavLink
           onClick={() => setSidebarOpen(false)}
-          to="jalalabad"
+          to="chuy"
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
-          Джалал-Абадская область
+          Чуйская область
         </NavLink>
         <NavLink
           onClick={() => setSidebarOpen(false)}
@@ -67,13 +74,6 @@ const Regions = () => {
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
           Талаская область
-        </NavLink>
-        <NavLink
-          onClick={() => setSidebarOpen(false)}
-          to="batken"
-          className={({ isActive }) => (isActive ? styles.active : '')}
-        >
-          Баткенская область
         </NavLink>
       </aside>
       <section className={styles.content}>

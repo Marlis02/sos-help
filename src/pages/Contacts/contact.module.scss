@@ -21,8 +21,8 @@
   background-color: #f9f9f9;
   padding: 20px;
   margin-bottom: 20px;
-  border-left: 4px solid #ccc;
-  border-radius: 6px;
+  border-left: 4px solid var(--color-dark-grey);
+  border-radius: 0 10px 10px 0;
 }
 
 .list {

@@ -10,6 +10,7 @@ import Issykkul from './pages/Regions/Issykkul'
 import Jalalabad from './pages/Regions/Jalalabad'
 import Batken from './pages/Regions/Batken'
 import Talas from './pages/Regions/Talas'
+import Mapchs from './pages/Mapchs/Mapchs'
 
 const Routing = () => {
   return (
@@ -25,6 +26,7 @@ const Routing = () => {
         <Route path="batken" element={<Batken />} />
         <Route path="talas" element={<Talas />} />
       </Route>
+      <Route path="/map-chs" element={<Mapchs />} />
       <Route path="/contacts" element={<Contacts />} />
     </Routes>
   )

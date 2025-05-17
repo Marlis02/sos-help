@@ -20,6 +20,12 @@ const Footer = () => {
             Регионы
           </NavLink>
           <NavLink
+            to="/map-chs"
+            className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
+          >
+            Карты ЧС
+          </NavLink>
+          <NavLink
             to="/contacts"
             className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
           >
@@ -38,7 +44,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className={styles.footer_end}>
-        <p>&copy;2025 Информационный портал. Все права защищены.</p>
+        <p className={styles.copy}>&copy;2025 Информационный портал. Все права защищены.</p>
       </div>
     </>
   )
